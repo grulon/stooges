@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="stoogeApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Stooges-Angular</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+
+    <script>
+      angular.module('stoogeApp', [])
+        .contoller('StoogeController', function($scope){
+          $scope.stooges = ['Larry', 'Curly', 'Moe'];
+        });
+
+
+    </script>
+
+  </head>
+  <body ng-contoller="StoogeController">
+
+    <ul>
+      <li ng-repeat="stooge in stooges">{{ stooge }}</li>
+    </ul>
+
+  </body>
+</html>
+
+    <script>
+      angular.module('stoogeApp', [])
+        .controller('StoogeController', function($scope) {
+          $scope.stooges = ['Larry', 'Curly', 'Moe'];
+        });
+    </script>
+
+  </head>
+  <body ng-controller="StoogeController">
+
+    <ul>
+      <li ng-repeat="stooge in stooges">{{ stooge }}</li>
+    </ul>
+
+  </body>
+</html>

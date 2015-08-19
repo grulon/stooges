@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Stooges-jQuery</title>
+  </head>
+  <body>
+
+    <label for="name">Name:</label><br>
+    <input type="text" id="textInput">
+
+    <p id="output"></p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+      $('#textInput').on('keyup', function() {
+        $('#output').text($(this).val());
+      });
+    </script>
+  </body>
+</html>
