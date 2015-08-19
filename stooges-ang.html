@@ -7,35 +7,26 @@
 
     <script>
       angular.module('stoogeApp', [])
-        .contoller('StoogeController', function($scope){
+        .controller('StoogeController', function($scope){
           $scope.stooges = ['Larry', 'Curly', 'Moe'];
-        });
+          $scope.extras = ['Shemp', 'CurlyJoe'];
 
-
-    </script>
-
-  </head>
-  <body ng-contoller="StoogeController">
-
-    <ul>
-      <li ng-repeat="stooge in stooges">{{ stooge }}</li>
-    </ul>
-
-  </body>
-</html>
-
-    <script>
-      angular.module('stoogeApp', [])
-        .controller('StoogeController', function($scope) {
-          $scope.stooges = ['Larry', 'Curly', 'Moe'];
+          $scope.addStooge = function() {
+            $scope.stooges.push($scope.stoogeName);
+          };
         });
     </script>
 
   </head>
   <body ng-controller="StoogeController">
+    <form ng-submit="addStooge()">
+        <input type="text"ng-model="stoogeName">
+        <input type="submit" value="Stooge Me!">
+    </form>
 
     <ul>
-      <li ng-repeat="stooge in stooges">{{ stooge }}</li>
+      <li ng-repeat="stooge in stooges">{{ stooge }} is a Stooge</li>
+      <li ng-repeat="extra in extras">{{ extra }} is an extra</li>
     </ul>
 
   </body>
